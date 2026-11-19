@@ -1,0 +1,3 @@
+/* Hide the native rendering only while the custom overlay is actually showing text. */
+.html5-video-player.edgetube-rendering .ytp-caption-window-container { opacity: 0 !important; }
+#edgetube-subtitle-host { position: absolute !important; inset: 0 !important; pointer-events: none !important; z-index: 61 !important; background: transparent !important; }

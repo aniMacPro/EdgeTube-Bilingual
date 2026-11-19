@@ -1,0 +1,18 @@
+{
+  "manifest_version": 3,
+  "name": "映译 · YouTube 双语字幕",
+  "version": "1.1.0",
+  "description": "使用 DeepSeek 翻译 YouTube 字幕，在播放器内同步显示原文和译文。",
+  "minimum_chrome_version": "111",
+  "permissions": ["storage"],
+  "host_permissions": ["https://api.deepseek.com/*", "https://www.youtube.com/*", "https://m.youtube.com/*"],
+  "background": { "service_worker": "background.js" },
+  "action": { "default_popup": "popup.html", "default_title": "映译 · 双语字幕" },
+  "options_ui": { "page": "popup.html", "open_in_tab": true },
+  "icons": { "16": "icons/16.png", "48": "icons/48.png", "128": "icons/128.png" },
+  "content_scripts": [
+    { "matches": ["https://www.youtube.com/*", "https://m.youtube.com/*"], "js": ["core.js", "bridge.js"], "run_at": "document_start", "world": "MAIN" },
+    { "matches": ["https://www.youtube.com/*", "https://m.youtube.com/*"], "js": ["core.js", "content.js"], "css": ["content.css"], "run_at": "document_idle" }
+  ],
+  "content_security_policy": { "extension_pages": "script-src 'self'; object-src 'none'" }
+}

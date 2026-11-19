@@ -1,0 +1,12 @@
+{
+  "name": "edgetube-bilingual",
+  "version": "1.1.0",
+  "private": true,
+  "description": "YouTube bilingual subtitle extension for Microsoft Edge, powered by DeepSeek.",
+  "scripts": {
+    "test": "node --test tests/core.test.cjs"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
